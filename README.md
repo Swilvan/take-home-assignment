@@ -26,30 +26,15 @@ Please implement the stories below, including a few tests for the back-end, in o
 - Back-end: gRPC, using Kotlin, Go. 
 - Front-end: gRPC, React. 
 
-If you use any dependencies, please add the associate containers to the project.
-
-This repo will be connected to Heroku so that your app can be deployed and inspected functionally. Please let us know what implementation languages you're going to use so we can set it up for you.
-
-You are free to use the CIS Automotive API (https://api.autodealerdata.com/docs).
 
 ## UI
 
 You are free to design your own UI. 
 
-Or you can take some clues from a UI we've uploaded to Zeplin. The UI is in the public domain
-and we've uploaded it to Zeplin for your convenience. Let us know if you want to use it.
+Or you can use this design: https://www.xdguru.com/cars-classified-website-xd-template/
 
-The design: https://www.xdguru.com/cars-classified-website-xd-template/
+Zeplin: https://scene.zeplin.io/project/5ef21a1a1d1ad329c5f66a27
 
-Zeplin: https://zpl.io/2j6Q1lx
-
-
-
-## Intermediate Review
-
-We offer you the option to ask one of us to give you intermediate feedback on your code before you hand your assignment in.
-
-Please use the "Review" button in Github to ask us.
 
 
 ## Assessment
