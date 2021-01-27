@@ -1,87 +1,41 @@
-# Take Home Assignment 
+# Project plan
 
-This assignment tests Back-end and Front-end development.
+### Architecture (TODO: more succinct!)
+My vision for the architecture for this project will be almost exactly the same as the vision for one of the projects
+I worked on in the past. I will setup a microservice architecture with an API gateway that serves the front-end and that 
+communicates to at least one back-end service. I believe one of the most important success factors in a software project
+is to make it easy to work on for multiple people. That means that these at least three services will run locally in their 
+own docker containers that will be spun up by a single command (e.g. `make run.all` or something similar). I will structure
+my work in a way where "least confident" and "most important" determine what I do first such that I have time for things that
+are hard for me, or important for the assignment.
 
-## Introduction
+### Division of work in the team
 
-Thank you for taking time to do this home assignment! 
+Some of this is dependent on how the team is composed. How experienced is everyone? Are all of them specialists? How often
+are we physically working together? I would want to decide upon an architecture/approach together with the team. Based on 
+the approach the team has decided upon I would want to figure out the first 2 or 3 questions that need to be answered to 
+enable the team to work on the stories (e.g. how do we structure the front-end and what language/library/framework will we use?
+Similar for backend, persistence). If we have someone who is super experienced in any of the technical areas that we cover
+I would want to ask them to propose concrete project setup. If we have someone who just came out of school I would want 
+them either pairing with a more experienced person or at least checking in every couple of hours so we keep moving forward
+and they learn as much as possible. Having setup the technical stuff I would want the team to start talking about API's 
+so we can set up a future proof system. I want to break my API as little as possible but still give myself the highest
+amount of freedom to change the code behind my (public facing?) API. Having finished the technical setup and the API's 
+involved I would want the team to decide upon the specifics of how to implement the stories and divide work as we see fit.
 
-The assignment asks you to do some simple things. The obvious implementation 
-should be easy for you. What we're interested in seeing is what you
-know from experience to be not so obvious.
+### How will this break in production?
 
-Imagine this has to run in production.
+TODO: determine when code is complete 
 
-What, besides the obvious, do you believe is necessary? Please code it that way :-)
+### Tasks
 
-There are 2 parts to the assignment:
-
-1) Some [code](#Coding) to be written.
-2) Some [questions](#Questions) about your code.
-
-## Tech choices
-
-Please implement the stories below, including a few tests for the back-end, in one of the following languages: 
-
-- Back-end: gRPC, using Kotlin, Go. 
-- Front-end: gRPC, React. 
-
-
-## UI
-
-You are free to design your own UI. 
-
-Or you can use this design: https://www.xdguru.com/cars-classified-website-xd-template/
-
-Zeplin: https://scene.zeplin.io/project/5ef21a1a1d1ad329c5f66a27
-
-
-
-## Assessment
-
-We "grade" based on the following criteria:
-
-* Did you implement according to the requirements?
-* Readability is important to us.
-* We look at your git commit log. It would be good if it shows us your process.
-* Understanding your tactical decisions should be made clear.
-
-## Coding Part
-
-### As a car dealer, I want to browse the cars I have in stock and give purchase recommendations tailored to the needs of my customers.
-
-More specifically,
-
-### As a car dealer, I want to search for cars by year and make.
-
-Example:
-
-- Given the year 2018, I should get the Citroen C3 and Honda Fit.
-- Given the brand Citroën, I should get the Citroen C3 2018.
-- Leaving the search string blank should return a list of all cars.
-
-### As a car dealer, I want to be able to add new cars to my store.
-
-Example:
-
-* I will enter the car's model, make, version, year of release, price, fuel consumption, and annual maintenance cost. The car will show up in the results returned by story #1.
-
-### As a car dealer, I want to recommend to my clients the car with the lowest total annual cost over a period of four (4) years, given the price of fuel (€/L) and the expected distance to travel each month (km/month).
-
-Relevant car parameters are price of the car (€), fuel consumption (km/l), and annual maintenance cost.
-
-Example:
-
-- Given that I expect to travel 250 km each month for the next 4 years, and the expected
-price of fuel is 0.66 €/L, what is the ranking of cars according to their total annual cost?
-
-### Questions
----
-
-Based on these stories, please do as follows:
-
-* Describe the architecture you will use and include a motivation of your choices. (max 500 characters)
-
-* You have a team of 3 developers. How would you tackle working together on the stories?
-
-* Can you describe 1 thing that can go wrong with your code once in production?
+- Setup Front-end using next
+- Setup back-end grpc API
+- Connect front-end to API service using grpc
+- Setup 'internal' back-end service that the 'api' service calls to do work
+- Connect grpc API service to 'internal' service
+- Implement front-end part of stories 
+- Implement back-end part of stories
+- 'Future proof' system
+    - add metrics/logging where lacking
+    - add persistence layer
